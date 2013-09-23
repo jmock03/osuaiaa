@@ -6,7 +6,7 @@
 var NUM_PREVIEW_IMGS = 3;
 var THUMBNAIL_SIZE = 210;
 var EXPAND_SIZE = 1.1;
-var GALLERY_PATH = '/gallery/';
+var GALLERY_PATH = '/aiaa/gallery/';
 
 
 // function: getAlbum
