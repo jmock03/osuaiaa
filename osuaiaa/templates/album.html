@@ -1,33 +1,36 @@
 {% extends "default.html" %}
 
+{% block extrahead %}{% endblock %}
+
+{% block page_header %}
+  <h1>{{ page.title }}</h1>
+{% endblock %}
+
 {% block content %}
+  <link rel="stylesheet" type="text/css" href="/aiaa/css/album.css" />
+  <script type="text/javascript" src="/aiaa/js/utilities.js" ></script>
 
-    <link rel="stylesheet" type="text/css" href="/aiaa/css/album.css" />
-    <script type="text/javascript" src="/aiaa/js/utilities.js" ></script>
+  <!--Bind album images to DOM-->
+  <span id="images" style="display:none">{{ site.images }}</span>
 
-    <!--Bind album image srcs to DOM-->
-    <span id="srcs" style="display:none">{{ site.srcs }}</span>
-    <span id="thumb_srcs" style="display:none">{{ site.thumb_srcs }}</span>
+  {{  page.content  }}
 
-    <!--Bind album image sizes to DOM-->
-    <span id="sizes" style="display:none">{{ site.sizes }}</span>
-    <span id="thumb_sizes" style="display:none">{{ site.thumb_sizes }}</span>
+  <div id="album" class="container"></div>
+  <span id="indicator"><span id="arrow-down"></span></span>
 
-    {{ page.content }}
+  <div class="overlay">
+    <div class="overlay-bg"></div>
+    <img class="thumb overlay-img">
+    <img class="full overlay-img">
+    <div class="prev nav"><span>&lt;</span></div>
+    <div class="next nav"><span>&gt;</span></div>
+  </div>
 
-    <div id="album" class="container"></div>
-
-    <span id="indicator">
-        <span class="arrow-down"></span>
-    </span>
-
-    <span id="rowSpinner" style="display:none;"></span>
-
-    <script type="text/javascript" src="/aiaa/js/lib/jquery-1.7.1.min.js" ></script>
-    <script type="text/javascript" src="/aiaa/js/lib/underscore-min.js" ></script>
-    <script type="text/javascript" src="/aiaa/js/lib/backbone-min.js" ></script>
-    <script type="text/javascript" src="/aiaa/js/lib/spin.min.js" ></script>
-    <script type="text/javascript" src="/aiaa/js/album.js" ></script>
+  <script type="text/javascript" src="/aiaa/js/lib/jquery-1.7.1.min.js" ></script>
+  <script type="text/javascript" src="/aiaa/js/lib/underscore-min.js" ></script>
+  <script type="text/javascript" src="/aiaa/js/lib/backbone-min.js" ></script>
+  <script type="text/javascript" src="/aiaa/js/lib/spin.min.js" ></script>
+  <script type="text/javascript" src="/aiaa/js/album.js" ></script>
 
 {% endblock %}
 
